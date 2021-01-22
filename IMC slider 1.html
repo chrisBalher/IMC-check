@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" />    
+    
+    <title>Indice Masa Corporal</title>   
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="/principal.js"></script> 
+    
+</head>
+<body>
+        <div class="bmi-calculator">
+            <div class="bmi-calculator-var">
+                    PESO:
+                    <input id="entradaPeso" type="number" value="60" min="30" max="160" oninput="insertarPeso(this.value)" />
+                    kg
+                    <input class="var-slider" id="sliderPeso" type="range" min="30" max="160" value="60" oninput="mostrarPeso(this.value)" />
+            </div>
+            <div class="bmi-calculator-var">   
+                    TALLA:
+                    <input id="entradaAltura" type="number" value="169" min="100" max="210" oninput="insertarAltura(this.value)" />
+                    cm 
+                    <input class="var-slider" id="sliderAltura" type="range" min="100" max="210" value="169" oninput="mostrarAltura(this.value)">
+            </div>
+            <div class="bmi-calculator-var">
+                    Perímetro Abdominal:
+                    <input name="Peri" id="entradaPerimetro" type="number" value="90" min="40" max="150" oninput="insertarPerimetro(this.value)" />
+                    cm
+                    <input class="var-slider" id="sliderPerimetro" value="90" type="range" min="40" max="150" oninput="mostrarPerimetro(this.value)">
+            </div>  
+            <div class="bmi-calculator-var">
+                GÉNERO:
+                <div class="gender">
+                    <label>
+                        <input id="female" type="radio" name="gender" value="female" />
+                        <div class="ion ion-woman"></div>
+                    </label>
+                    <label>
+                        <input id="male" type="radio" name="gender" value="male" checked />
+                        <div class="ion ion-man"></div>
+                    </label>
+                </div>
+                
+            </div>
+            <div class="resultado">
+                <a href="#msj"><input class="gumb" type="button" value="Calcular" onclick="calculateBmi(), analizarPA()" ></a>
+                <strong>Tu IMC es:</strong>
+                <span id="yourbmi"></span>
+            </div>
+            <section id="msj" class="msj-eval">
+                <p id="evaluationMessage1"></p>
+                <p id="evaluationMessage2"></p>
+                <p id="evaluationMessage3"></p>
+                <p id="evaluationMessage4"></p>
+            </section>
+        </div>
+</body>
+</html>
